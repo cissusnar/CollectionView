@@ -619,11 +619,11 @@ public class MutableResultsController<Section: SectionType, Element: ResultType>
         delegate?.controllerDidChangeContent(controller: self)
         self._sectionsCopy = nil
     }
-    
-    @available(*, unavailable, message: "This functionality has been replaced with CollectionViewProvider.")
+#warning("compile error on OS X 10.13+")
+//    @available(*, unavailable, message: "This functionality has been replaced with CollectionViewProvider.")
     public var hasEmptyPlaceholder: Bool = false
-    
-    @available(*, unavailable, message: "This functionality has been replaced with CollectionViewProvider.")
+#warning("compile error on OS X 10.13+")
+//    @available(*, unavailable, message: "This functionality has been replaced with CollectionViewProvider.")
     public private(set) var placeholderChanges: CollectionViewProvider?
 }
 
