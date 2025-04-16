@@ -695,6 +695,15 @@ open class CollectionView: ScrollView, NSDraggingSource {
         get { return self.clipView?.scrollEnabled ?? true }
     }
     
+    open override func scrollWheel(with event: NSEvent) {
+        if (self.isScrollEnabled) {
+            super.scrollWheel(with: event)
+        }
+        else {
+            self.nextResponder?.scrollWheel(with: event)
+        }
+    }
+    
     /// Returns true if the collection view is currently scrolling
     public internal(set) var isScrolling: Bool = false
     
